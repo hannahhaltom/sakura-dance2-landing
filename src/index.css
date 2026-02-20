@@ -2,95 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap');
+
+/* Honma Sakura Dance 2 Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Sakura palette */
+    --sakura-petal:       340 60% 80%;
+    --sakura-deep:        340 55% 55%;
+    --sakura-blush:       340 40% 92%;
+    --sakura-rose:        340 65% 68%;
+    --sakura-dark:        340 30% 18%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Core tokens */
+    --background:         0 0% 97%;
+    --foreground:         220 15% 10%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card:               0 0% 100%;
+    --card-foreground:    220 15% 10%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --popover:            0 0% 100%;
+    --popover-foreground: 220 15% 10%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary:            340 55% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary:          340 40% 92%;
+    --secondary-foreground: 340 30% 18%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted:              220 10% 94%;
+    --muted-foreground:   220 10% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent:             340 60% 80%;
+    --accent-foreground:  340 30% 18%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive:        0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --radius: 0.5rem;
+    --border:             340 20% 88%;
+    --input:              340 20% 88%;
+    --ring:               340 55% 55%;
 
+    --radius: 0.25rem;
+
+    /* Gradients */
+    --gradient-hero:      linear-gradient(150deg, hsl(220 20% 8%) 0%, hsl(340 25% 14%) 60%, hsl(340 40% 22%) 100%);
+    --gradient-sakura:    linear-gradient(135deg, hsl(340 60% 80% / 0.3), hsl(340 55% 55% / 0.15));
+    --gradient-cta:       linear-gradient(135deg, hsl(340 55% 55%), hsl(340 65% 68%));
+    --gradient-section:   linear-gradient(180deg, hsl(0 0% 97%) 0%, hsl(340 40% 96%) 100%);
+
+    /* Shadows */
+    --shadow-soft:        0 4px 24px -4px hsl(340 55% 55% / 0.18);
+    --shadow-card:        0 2px 16px -2px hsl(220 20% 10% / 0.10);
+    --shadow-hero:        0 8px 40px -8px hsl(340 55% 55% / 0.35);
+
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-primary:    240 5.9% 10%;
     --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
+    --sidebar-accent:     240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-border:     220 13% 91%;
+    --sidebar-ring:       217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 220 20% 8%;
+    --foreground: 340 30% 92%;
+    --card: 220 18% 11%;
+    --card-foreground: 340 30% 92%;
+    --primary: 340 60% 70%;
+    --primary-foreground: 220 20% 8%;
+    --secondary: 340 25% 18%;
+    --secondary-foreground: 340 50% 85%;
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 340 40% 25%;
+    --accent-foreground: 340 60% 80%;
+    --border: 340 15% 20%;
+    --input: 340 15% 20%;
+    --ring: 340 60% 70%;
   }
 }
 
@@ -101,5 +94,120 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
   }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Jost', sans-serif;
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-sakura {
+    background: var(--gradient-sakura);
+  }
+
+  .gradient-cta {
+    background: var(--gradient-cta);
+  }
+
+  .gradient-section {
+    background: var(--gradient-section);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-hero {
+    box-shadow: var(--shadow-hero);
+  }
+
+  .text-sakura-petal {
+    color: hsl(var(--sakura-petal));
+  }
+
+  .text-sakura-deep {
+    color: hsl(var(--sakura-deep));
+  }
+
+  .bg-sakura-blush {
+    background-color: hsl(var(--sakura-blush));
+  }
+
+  .bg-sakura-dark {
+    background-color: hsl(var(--sakura-dark));
+  }
+
+  .border-sakura {
+    border-color: hsl(var(--sakura-petal));
+  }
+}
+
+/* Sakura petal animation */
+@keyframes float-petal {
+  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(110vh) translateX(60px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.9s ease both;
+}
+
+.animate-fade-in {
+  animation: fade-in 1.2s ease both;
+}
+
+.animate-petal {
+  animation: float-petal linear infinite;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+.shimmer-text {
+  background: linear-gradient(90deg, hsl(var(--sakura-petal)), hsl(var(--sakura-deep)), hsl(var(--sakura-petal)));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
 }
