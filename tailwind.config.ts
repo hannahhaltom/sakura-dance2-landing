@@ -13,8 +13,19 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        display: ["Cormorant Garamond", "serif"],
+        body: ["Jost", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
+        sakura: {
+          petal: "hsl(var(--sakura-petal))",
+          deep: "hsl(var(--sakura-deep))",
+          blush: "hsl(var(--sakura-blush))",
+          rose: "hsl(var(--sakura-rose))",
+          dark: "hsl(var(--sakura-dark))",
+        },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
