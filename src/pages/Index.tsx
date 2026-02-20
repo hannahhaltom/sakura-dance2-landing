@@ -1,4 +1,5 @@
 import sakuraHeroLight from "@/assets/sakura-hero-light.jpg";
+import honmaClubsReal from "@/assets/honma-clubs-real.jpeg";
 import sakuraIron from "@/assets/sakura-iron.jpg";
 import sakuraLifestyle from "@/assets/sakura-lifestyle.jpg";
 import sakuraAccessories from "@/assets/sakura-accessories.jpg";
@@ -166,9 +167,9 @@ export default function Index() {
           <div className="relative flex justify-center items-center animate-fade-in delay-300">
             <div className="absolute inset-0 rounded-3xl bg-sakura-rose/20 blur-3xl scale-90" />
             <img
-              src={sakuraHeroLight}
+              src={honmaClubsReal}
               alt="Sakura Dance 2 Golf Clubs"
-              className="relative w-full max-w-xl object-contain drop-shadow-2xl"
+              className="relative w-full max-w-xl object-cover rounded-2xl drop-shadow-2xl"
             />
           </div>
         </div>
