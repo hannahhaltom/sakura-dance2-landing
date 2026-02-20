@@ -1,7 +1,7 @@
 import sakuraHeroLight from "@/assets/sakura-hero-light.jpg";
 import honmaClubsReal from "@/assets/honma-clubs-real.jpeg";
 import sakuraIron from "@/assets/sakura-iron.jpg";
-import sakuraLifestyle from "@/assets/sakura-lifestyle.jpg";
+import sakuraLifestyle from "@/assets/honma-lifestyle-real.jpg";
 import sakuraAccessories from "@/assets/sakura-accessories.jpg";
 import { useState } from "react";
 
