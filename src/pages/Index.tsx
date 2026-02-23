@@ -6,12 +6,6 @@ import sakuraLifestyle from "@/assets/honma-sakura-dance-lifestyle.jpg";
 import sakuraAccessories from "@/assets/honma-sakura-dance-accessories.jpg";
 import { useState } from "react";
 
-const HonmaLogo = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 120 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <text x="0" y="22" fontFamily="serif" fontSize="24" letterSpacing="4" fontWeight="500">HONMA</text>
-  </svg>
-);
-
 /* ── Floating petal ── */
 const Petal = ({ style }: { style: React.CSSProperties }) => (
   <div className="pointer-events-none absolute" style={style}>
@@ -33,14 +27,13 @@ const petals = Array.from({ length: 22 }, (_, i) => ({
   transform: `scale(${0.5 + Math.random() * 1})`,
 }));
 
-// FIX 1: Added icon property to each club object
 const clubs = [
-  { name: "Driver",       spec: "11.5°",      icon: "🏌️" },
-  { name: "Fairway Wood", spec: "16°",         icon: "🌲" },
-  { name: "Fairway Wood", spec: "19°",         icon: "🌲" },
-  { name: "Hybrid",       spec: "22°",         icon: "⚡" },
-  { name: "Iron Set",     spec: "#6–11, SW",   icon: "✦" },
-  { name: "Putter",       spec: "Mallet",      icon: "◎" },
+  { name: "Driver",       spec: "11.5°",    icon: "🏌️" },
+  { name: "Fairway Wood", spec: "16°",       icon: "🌲" },
+  { name: "Fairway Wood", spec: "19°",       icon: "🌲" },
+  { name: "Hybrid",       spec: "22°",       icon: "⚡" },
+  { name: "Iron Set",     spec: "#6–11, SW", icon: "✦"  },
+  { name: "Putter",       spec: "Mallet",    icon: "◎"  },
 ];
 
 const accessories = [
@@ -93,13 +86,13 @@ export default function Index() {
     <div className="min-h-screen overflow-x-hidden font-body bg-background">
 
       {/* ── NAV ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 backdrop-blur-md bg-background/80 border-b border-sakura-petal/30">
-        <span className="font-display text-xl font-medium tracking-[0.2em] text-sakura-deep">HONMA</span>
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 backdrop-blur-md bg-white/90 border-b border-sakura-petal/30">
+        <img src={honmaLogo} alt="Honma Golf" className="h-7 w-auto" />
         <div className="hidden md:flex items-center gap-8 text-xs tracking-[0.2em] text-sakura-deep/60 font-light uppercase">
-          <a href="#story"        className="hover:text-sakura-deep transition-colors">Story</a>
-          <a href="#performance"  className="hover:text-sakura-deep transition-colors">Performance</a>
-          <a href="#included"     className="hover:text-sakura-deep transition-colors">Included</a>
-          <a href="#colors"       className="hover:text-sakura-deep transition-colors">Colors</a>
+          <a href="#story"       className="hover:text-sakura-deep transition-colors">Story</a>
+          <a href="#performance" className="hover:text-sakura-deep transition-colors">Performance</a>
+          <a href="#included"    className="hover:text-sakura-deep transition-colors">Included</a>
+          <a href="#colors"      className="hover:text-sakura-deep transition-colors">Colors</a>
         </div>
         <a
           href="https://us.honmagolf.com/collections/sakura-dance-2-package-sets"
@@ -113,7 +106,7 @@ export default function Index() {
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-        {/* BG image with light overlay */}
+        {/* BG image with pink-to-white ombre overlay */}
         <div className="absolute inset-0">
           <img
             src={myHeroBg}
@@ -127,7 +120,8 @@ export default function Index() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {petals.map((p, i) => (
             <Petal key={i} style={{
-              left: p.left, top: p.top,
+              left: p.left,
+              top: p.top,
               animationName: "float-petal",
               animationDuration: p.animationDuration,
               animationDelay: p.animationDelay,
@@ -145,17 +139,13 @@ export default function Index() {
             <p className="animate-fade-up delay-100 text-xs tracking-[0.4em] uppercase text-sakura-deep/60 mb-6 font-light">
               Honma Golf · Limited Edition
             </p>
-
-            {/* Big display title */}
             <h1 className="animate-fade-up delay-200 font-display leading-none text-foreground mb-6">
               <span className="block text-7xl md:text-[7rem] font-light italic tracking-tight">Sakura</span>
               <span className="block text-7xl md:text-[7rem] font-semibold tracking-tight text-sakura-deep">Dance 2</span>
             </h1>
-
             <p className="animate-fade-up delay-300 text-foreground/70 text-base md:text-lg leading-relaxed mb-8 max-w-md font-light">
               Inspired by the grace of cherry blossoms in motion, Sakura Dance 2 is a premium ladies' golf set designed to elevate your game with beauty, forgiveness, and effortless swingability.
             </p>
-
             <div className="animate-fade-up delay-400 flex flex-col sm:flex-row gap-4 items-start mb-8">
               <a
                 href="https://us.honmagolf.com/collections/sakura-dance-2-package-sets"
@@ -172,7 +162,6 @@ export default function Index() {
                 Discover More
               </a>
             </div>
-
             <p className="animate-fade-up delay-500 text-xs tracking-widest text-sakura-deep/40 uppercase">
               Small-batch Offering · Limited Availability
             </p>
@@ -181,7 +170,7 @@ export default function Index() {
             </p>
           </div>
 
-          {/* Right — hero image */}
+          {/* Right — product image */}
           <div className="relative flex justify-center items-center animate-fade-in delay-300">
             <div className="absolute inset-0 rounded-3xl bg-sakura-rose/20 blur-3xl scale-90" />
             <img
@@ -192,8 +181,8 @@ export default function Index() {
           </div>
         </div>
 
-        {/* Color tag strip at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-6 py-5 bg-white/40 backdrop-blur-sm border-t border-sakura-petal/20">
+        {/* Color strip at bottom */}
+        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-6 py-5 bg-white/60 backdrop-blur-sm border-t border-sakura-petal/20">
           <span className="text-xs tracking-[0.3em] uppercase text-sakura-deep/70 font-medium">Two Signature Finishes, Each with Matching Gear</span>
           <span className="text-sakura-deep font-display italic text-sm">Sakura Pink</span>
           <span className="text-sakura-deep/40">/</span>
@@ -244,7 +233,7 @@ export default function Index() {
       </section>
 
       {/* ── PERFORMANCE ── */}
-      <section id="performance" className="py-24 gradient-section">
+      <section id="performance" className="py-24 bg-white border-t border-sakura-petal/30">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <p className="text-xs tracking-[0.4em] uppercase text-sakura-deep mb-3">Engineering</p>
@@ -312,11 +301,9 @@ export default function Index() {
               {clubs.map((c, i) => (
                 <div
                   key={i}
-                  // FIX 2: removed hover:pl-2 which caused layout shift; use padding-left with transition instead
                   className="flex items-center justify-between py-4 border-b border-sakura-petal/30 last:border-0 transition-all duration-300 hover:pl-3"
                 >
                   <div className="flex items-center gap-4">
-                    {/* FIX 3: c.icon now exists — renders correctly */}
                     <span className="text-lg">{c.icon}</span>
                     <span className="font-light text-foreground">{c.name}</span>
                   </div>
@@ -346,7 +333,7 @@ export default function Index() {
       </section>
 
       {/* ── COLORS ── */}
-      <section id="colors" className="py-24 bg-sakura-blush overflow-hidden">
+      <section id="colors" className="py-24 bg-white overflow-hidden border-t border-sakura-petal/30">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-14">
             <p className="text-xs tracking-[0.4em] uppercase text-sakura-deep/60 mb-3">Choose Your Expression</p>
@@ -366,7 +353,6 @@ export default function Index() {
                     : "border-sakura-deep/30 text-sakura-deep/70 hover:border-sakura-deep/60 hover:text-sakura-deep bg-white/60"
                 }`}
               >
-                {/* FIX 4: swatch dot was missing background — added inline style correctly */}
                 <span
                   className="w-3 h-3 rounded-full border border-sakura-petal/50 flex-shrink-0"
                   style={{ backgroundColor: c.hex }}
@@ -397,7 +383,8 @@ export default function Index() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {petals.slice(0, 10).map((p, i) => (
             <Petal key={i} style={{
-              left: p.left, top: p.top,
+              left: p.left,
+              top: p.top,
               animationName: "float-petal",
               animationDuration: p.animationDuration,
               animationDelay: p.animationDelay,
@@ -442,8 +429,8 @@ export default function Index() {
       <footer className="bg-white py-12 px-8 border-t border-sakura-petal/30">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <p className="font-display text-xl font-medium tracking-[0.2em] text-sakura-deep">HONMA</p>
-            <p className="text-xs text-sakura-deep/40 tracking-widest mt-1">Sakura Dance 2 · 2025</p>
+            <img src={honmaLogo} alt="Honma Golf" className="h-6 w-auto opacity-80 mb-1" />
+            <p className="text-xs text-sakura-deep/40 tracking-widest">Sakura Dance 2 · 2025</p>
           </div>
           <p className="text-xs text-foreground/30 font-light tracking-wide text-center">
             © 2025 Honma Golf. All rights reserved. All clubs are custom built in Sakata, Japan.
