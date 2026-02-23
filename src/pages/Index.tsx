@@ -111,7 +111,7 @@ export default function Index() {
           <img
             src={myHeroBg}
             alt="Sakura Dance 2"
-            className="w-full h-full object-cover opacity-80"
+            className="w-full h-full object-cover opacity-85"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/55 to-white/95" />
         </div>
@@ -143,7 +143,8 @@ export default function Index() {
               <span className="block text-7xl md:text-[7rem] font-medium italic tracking-tight">Sakura</span>
               <span className="block text-7xl md:text-[7rem] font-semibold tracking-tight text-sakura-deep">Dance 2</span>
             </h1>
-            <p className="animate-fade-up delay-300 text-foreground/70 text-base md:text-lg leading-relaxed mb-8 max-w-md font-light">
+            <p className="animate-fade-up delay-300 text-foreground text-base md:text-lg leading-relaxed mb-8 max-w-md font-normal"
+>
               Inspired by the grace of cherry blossoms in motion, Sakura Dance 2 is a premium ladies' golf set designed to elevate your game with beauty, forgiveness, and effortless swingability.
             </p>
             <div className="animate-fade-up delay-400 flex flex-col sm:flex-row gap-4 items-start mb-8">
