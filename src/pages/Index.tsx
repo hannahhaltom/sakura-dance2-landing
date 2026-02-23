@@ -19,7 +19,7 @@ const Petal = ({ style }: { style: React.CSSProperties }) => (
 );
 
 const petals = Array.from({ length: 16 }, (_, i) => ({
-  left: `${(i / 22) * 100 + (Math.random() * 6 - 3)}%`,
+  left: `${(i / 16) * 110 - 5 + (Math.random() * 8 - 4)}%`,
   top: `-${Math.random() * 8 + 2}%`,
   animationDuration: `${14 + Math.random() * 10}s`,
   animationDelay: `${Math.random() * 7}s`,
@@ -209,9 +209,9 @@ export default function Index() {
         <div>
           <p className="text-xs tracking-[0.4em] uppercase text-sakura-deep mb-4">The Story</p>
           <h2 className="font-display text-5xl md:text-6xl font-light leading-tight text-foreground mb-6">
-            Like Blossoms<br />
-            <em className="text-sakura-deep">Dancing</em><br />
-            on a Spring Breeze
+            Rare by Design.<br />
+            <em className="text-sakura-deep">Remarkable by Nature.</em><br />
+          
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-5 font-light">
             Like cherry blossoms dancing on a spring breeze, your shots will rise high — beautifully painting the fairway. Sakura Dance 2 achieves significant weight reduction throughout the set, delivering faster swing speeds, improved ball speed, and +1.4 yards of carry distance over the original.
