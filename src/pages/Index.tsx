@@ -1,3 +1,4 @@
+import honmaLogo from "@/assets/honma-logo.png";
 import myHeroBg from "@/assets/honma-sakura-dance-driver.jpg";
 import myClubsImage from "@/assets/honma-sakura-dance-2-25.jpg";
 import sakuraIron from "@/assets/honma-sakura-dance-iron.jpg";
@@ -5,13 +6,19 @@ import sakuraLifestyle from "@/assets/honma-sakura-dance-lifestyle.jpg";
 import sakuraAccessories from "@/assets/honma-sakura-dance-accessories.jpg";
 import { useState } from "react";
 
+const HonmaLogo = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 120 28" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <text x="0" y="22" fontFamily="serif" fontSize="24" letterSpacing="4" fontWeight="500">HONMA</text>
+  </svg>
+);
+
 /* ── Floating petal ── */
 const Petal = ({ style }: { style: React.CSSProperties }) => (
   <div className="pointer-events-none absolute" style={style}>
     <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
       <path
         d="M9 0C9 0 16 6 16 11.5C16 15.5 12.5 19 9 20C5.5 19 2 15.5 2 11.5C2 6 9 0 9 0Z"
-        fill="hsl(340 65% 70% / 0.55)"
+        fill="hsl(340 60% 78% / 0.35)"
       />
     </svg>
   </div>
@@ -113,7 +120,7 @@ export default function Index() {
             alt="Sakura Dance 2"
             className="w-full h-full object-cover opacity-80"
           />
-          <div className="absolute inset-0 bg-white/45" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-white/55 to-white/95" />
         </div>
 
         {/* Petals */}
@@ -195,10 +202,10 @@ export default function Index() {
       </section>
 
       {/* ── TAGLINE BAND ── */}
-      <div className="bg-sakura-deep py-4 overflow-hidden">
+      <div className="bg-sakura-petal/40 py-4 overflow-hidden border-y border-sakura-rose/20">
         <div className="flex animate-[shimmer_12s_linear_infinite] whitespace-nowrap">
           {Array.from({ length: 6 }).map((_, i) => (
-            <span key={i} className="text-primary-foreground/80 text-xs tracking-[0.4em] uppercase font-light mx-12">
+            <span key={i} className="text-sakura-deep/60 text-xs tracking-[0.4em] uppercase font-light mx-12">
               Elegance Meets Performance ✦ Japanese Craftsmanship ✦ Limited Allocation ✦
             </span>
           ))}

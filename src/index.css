@@ -8,56 +8,56 @@
 
 @layer base {
   :root {
-    /* Sakura palette — light & bright inspired by brand banner */
-    --sakura-petal:       340 70% 82%;
-    --sakura-deep:        340 58% 48%;
-    --sakura-blush:       340 80% 95%;
-    --sakura-rose:        340 65% 68%;
-    --sakura-dark:        340 45% 30%;
+    /* Sakura palette — softened, white-forward */
+    --sakura-petal:       340 55% 88%;      /* was 82% — lighter, more blush */
+    --sakura-deep:        340 45% 52%;      /* was 48% — slightly muted mauve-pink */
+    --sakura-blush:       340 60% 97%;      /* was 95% — nearly white */
+    --sakura-rose:        340 50% 78%;      /* was 68% — softer rose */
+    --sakura-dark:        340 40% 32%;      /* unchanged */
     --sakura-gold:        40 70% 55%;
-    --sakura-cream:       30 60% 97%;
+    --sakura-cream:       30 60% 99%;       /* warmer near-white */
 
-    /* Core tokens */
-    --background:         340 60% 97%;
-    --foreground:         340 30% 18%;
+    /* Core tokens — white base instead of pink-tinted */
+    --background:         0 0% 100%;        /* pure white — was pink-tinted */
+    --foreground:         340 25% 20%;
 
     --card:               0 0% 100%;
-    --card-foreground:    340 30% 18%;
+    --card-foreground:    340 25% 20%;
 
     --popover:            0 0% 100%;
-    --popover-foreground: 340 30% 18%;
+    --popover-foreground: 340 25% 20%;
 
-    --primary:            340 58% 48%;
+    --primary:            340 45% 52%;      /* softened */
     --primary-foreground: 0 0% 100%;
 
-    --secondary:          340 80% 95%;
-    --secondary-foreground: 340 30% 18%;
+    --secondary:          340 60% 97%;      /* near-white blush */
+    --secondary-foreground: 340 25% 20%;
 
-    --muted:              340 40% 93%;
-    --muted-foreground:   340 20% 45%;
+    --muted:              340 30% 96%;      /* very light */
+    --muted-foreground:   340 15% 50%;
 
-    --accent:             340 70% 82%;
-    --accent-foreground:  340 30% 18%;
+    --accent:             340 55% 88%;
+    --accent-foreground:  340 25% 20%;
 
     --destructive:        0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border:             340 30% 88%;
-    --input:              340 30% 88%;
-    --ring:               340 58% 48%;
+    --border:             340 25% 92%;      /* subtle border */
+    --input:              340 25% 92%;
+    --ring:               340 45% 52%;
 
     --radius: 0.5rem;
 
-    /* Gradients — bright pink like brand banner */
-    --gradient-hero:      linear-gradient(140deg, hsl(340 80% 92%) 0%, hsl(340 70% 82%) 50%, hsl(340 60% 75%) 100%);
-    --gradient-sakura:    linear-gradient(135deg, hsl(340 80% 95%), hsl(340 65% 88%));
-    --gradient-cta:       linear-gradient(135deg, hsl(340 58% 48%), hsl(340 65% 58%));
-    --gradient-section:   linear-gradient(180deg, hsl(340 60% 97%) 0%, hsl(340 80% 95%) 100%);
+    /* Gradients — white forward, pink as accent not dominant */
+    --gradient-hero:      linear-gradient(160deg, hsl(0 0% 100%) 0%, hsl(340 60% 96%) 50%, hsl(340 55% 90%) 100%);
+    --gradient-sakura:    linear-gradient(135deg, hsl(0 0% 100%), hsl(340 55% 95%));
+    --gradient-cta:       linear-gradient(135deg, hsl(340 45% 52%), hsl(340 50% 62%));
+    --gradient-section:   linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(340 50% 97%) 100%);
 
-    /* Shadows */
-    --shadow-soft:        0 4px 24px -4px hsl(340 58% 48% / 0.20);
-    --shadow-card:        0 2px 16px -2px hsl(340 40% 50% / 0.12);
-    --shadow-hero:        0 8px 40px -8px hsl(340 58% 48% / 0.30);
+    /* Shadows — softer */
+    --shadow-soft:        0 4px 24px -4px hsl(340 45% 52% / 0.12);
+    --shadow-card:        0 2px 16px -2px hsl(340 30% 50% / 0.08);
+    --shadow-hero:        0 8px 40px -8px hsl(340 45% 52% / 0.18);
 
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
@@ -75,17 +75,17 @@
     --foreground: 340 30% 92%;
     --card: 220 18% 11%;
     --card-foreground: 340 30% 92%;
-    --primary: 340 60% 70%;
+    --primary: 340 50% 72%;
     --primary-foreground: 220 20% 8%;
     --secondary: 340 25% 18%;
     --secondary-foreground: 340 50% 85%;
     --muted: 220 15% 15%;
     --muted-foreground: 220 10% 55%;
-    --accent: 340 40% 25%;
-    --accent-foreground: 340 60% 80%;
+    --accent: 340 35% 25%;
+    --accent-foreground: 340 55% 82%;
     --border: 340 15% 20%;
     --input: 340 15% 20%;
-    --ring: 340 60% 70%;
+    --ring: 340 50% 70%;
   }
 }
 
@@ -163,12 +163,12 @@
   }
 }
 
-/* Sakura petal animation */
+/* Sakura petal animation — softer, slightly slower */
 @keyframes float-petal {
-  0%   { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
-  10%  { opacity: 0.7; }
-  90%  { opacity: 0.4; }
-  100% { transform: translateY(110vh) translateX(60px) rotate(360deg); opacity: 0; }
+  0%   { transform: translateY(-20px) translateX(0) rotate(0deg); opacity: 0; }
+  8%   { opacity: 0.5; }
+  88%  { opacity: 0.25; }
+  100% { transform: translateY(110vh) translateX(80px) rotate(400deg); opacity: 0; }
 }
 
 @keyframes fade-up {
@@ -206,7 +206,7 @@
 .delay-600 { animation-delay: 0.6s; }
 
 .shimmer-text {
-  background: linear-gradient(90deg, hsl(var(--sakura-petal)), hsl(var(--sakura-deep)), hsl(var(--sakura-petal)));
+  background: linear-gradient(90deg, hsl(var(--sakura-rose)), hsl(var(--sakura-deep)), hsl(var(--sakura-rose)));
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
