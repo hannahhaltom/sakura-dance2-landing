@@ -12,7 +12,7 @@ const Petal = ({ style }: { style: React.CSSProperties }) => (
     <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
       <path
         d="M9 0C9 0 16 6 16 11.5C16 15.5 12.5 19 9 20C5.5 19 2 15.5 2 11.5C2 6 9 0 9 0Z"
-        fill="hsl(340 60% 78% / 0.35)"
+        fill="hsl(340 65% 70% / 0.55)"
       />
     </svg>
   </div>
@@ -88,7 +88,7 @@ export default function Index() {
       {/* ── NAV ── */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-4 backdrop-blur-md bg-white/90 border-b border-sakura-petal/30">
         <img src={honmaLogo} alt="Honma Golf" className="h-7 w-auto" />
-        <div className="hidden md:flex items-center gap-8 text-xs tracking-[0.2em] text-sakura-deep/60 font-light uppercase">
+        <div className="hidden md:flex items-center gap-8 text-xs tracking-[0.2em] text-sakura-deep/60 font-normal uppercase">
           <a href="#story"       className="hover:text-sakura-deep transition-colors">Story</a>
           <a href="#performance" className="hover:text-sakura-deep transition-colors">Performance</a>
           <a href="#included"    className="hover:text-sakura-deep transition-colors">Included</a>
@@ -136,14 +136,14 @@ export default function Index() {
         <div className="relative z-10 max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-8 items-center w-full py-12">
           {/* Left — text */}
           <div>
-            <p className="animate-fade-up delay-100 text-xs tracking-[0.4em] uppercase text-sakura-deep/60 mb-6 font-light">
+            <p className="animate-fade-up delay-100 text-xs tracking-[0.4em] uppercase text-sakura-deep/60 mb-6 font-normal">
               Honma Golf · Limited Edition
             </p>
             <h1 className="animate-fade-up delay-200 font-display leading-none text-foreground mb-6">
               <span className="block text-7xl md:text-[7rem] font-medium italic tracking-tight">Sakura</span>
               <span className="block text-7xl md:text-[7rem] font-semibold tracking-tight text-sakura-deep">Dance 2</span>
             </h1>
-            <p className="animate-fade-up delay-300 text-foreground text-base md:text-lg leading-relaxed mb-8 max-w-md font-normal"
+            <p className="animate-fade-up delay-300 text-foreground text-base md:text-lg leading-relaxed mb-8 max-w-md font-light"
 >
               Inspired by the grace of cherry blossoms in motion, Sakura Dance 2 is a premium ladies' golf set designed to elevate your game with beauty, forgiveness, and effortless swingability.
             </p>
@@ -176,7 +176,7 @@ export default function Index() {
 
         {/* Color strip at bottom */}
         <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-6 py-5 bg-white/60 backdrop-blur-sm border-t border-sakura-petal/20">
-          <span className="text-xs tracking-[0.3em] uppercase text-sakura-deep/70 font-medium">Two Signature Finishes, Each with Matching Gear</span>
+          <span className="text-xs tracking-[0.3em] uppercase text-sakura-deep/70 font-normal">Two Signature Finishes, Each with Matching Gear</span>
           <span className="text-sakura-deep font-display italic text-sm">Sakura Pink</span>
           <span className="text-sakura-deep/40">/</span>
           <span className="text-sakura-deep font-display italic text-sm">Pure White</span>
