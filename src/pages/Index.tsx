@@ -28,12 +28,12 @@ const petals = Array.from({ length: 22 }, (_, i) => ({
 }));
 
 const clubs = [
-  { name: "Driver",       spec: "11.5°",    icon: "🏌️" },
-  { name: "Fairway Wood", spec: "16°",       icon: "🌲" },
-  { name: "Fairway Wood", spec: "19°",       icon: "🌲" },
-  { name: "Hybrid",       spec: "22°",       icon: "⚡" },
-  { name: "Iron Set",     spec: "#6–11, SW", icon: "✦"  },
-  { name: "Putter",       spec: "Mallet",    icon: "◎"  },
+  { name: "Driver",       spec: "11.5°",    icon: "✓" },
+  { name: "Fairway Wood", spec: "16°",       icon: "✓" },
+  { name: "Fairway Wood", spec: "19°",       icon: "✓" },
+  { name: "Hybrid",       spec: "22°",       icon: "✓" },
+  { name: "Iron Set",     spec: "#6–11, SW", icon: "✓" },
+  { name: "Putter",       spec: "Mallet",    icon: "✓" },
 ];
 
 const accessories = [
@@ -140,7 +140,7 @@ export default function Index() {
               Honma Golf · Limited Edition
             </p>
             <h1 className="animate-fade-up delay-200 font-display leading-none text-foreground mb-6">
-              <span className="block text-7xl md:text-[7rem] font-light italic tracking-tight">Sakura</span>
+              <span className="block text-7xl md:text-[7rem] font-medium italic tracking-tight">Sakura</span>
               <span className="block text-7xl md:text-[7rem] font-semibold tracking-tight text-sakura-deep">Dance 2</span>
             </h1>
             <p className="animate-fade-up delay-300 text-foreground/70 text-base md:text-lg leading-relaxed mb-8 max-w-md font-light">
@@ -170,15 +170,7 @@ export default function Index() {
             </p>
           </div>
 
-          {/* Right — product image */}
-          <div className="relative flex justify-center items-center animate-fade-in delay-300">
-            <div className="absolute inset-0 rounded-3xl bg-sakura-rose/20 blur-3xl scale-90" />
-            <img
-              src={myClubsImage}
-              alt="Sakura Dance 2 Golf Clubs"
-              className="relative w-full max-w-xl object-cover rounded-2xl drop-shadow-2xl"
-            />
-          </div>
+          
         </div>
 
         {/* Color strip at bottom */}
@@ -211,8 +203,8 @@ export default function Index() {
             className="relative w-full h-[480px] object-cover rounded-2xl shadow-card"
           />
           <div className="absolute -bottom-5 -right-5 bg-sakura-deep text-primary-foreground px-6 py-4 text-center rounded-xl">
-            <p className="font-display text-3xl font-light">2025</p>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-primary-foreground/70">Collection</p>
+            <p className="font-display text-3xl font-light">Limited</p>
+            <p className="text-[10px] tracking-[0.3em] uppercase text-primary-foreground/70">Edition</p>
           </div>
         </div>
         <div>
@@ -304,7 +296,7 @@ export default function Index() {
                   className="flex items-center justify-between py-4 border-b border-sakura-petal/30 last:border-0 transition-all duration-300 hover:pl-3"
                 >
                   <div className="flex items-center gap-4">
-                    <span className="text-lg">{c.icon}</span>
+                    <span className="text-sm font-medium text-sakura-deep">{c.icon}</span>
                     <span className="font-light text-foreground">{c.name}</span>
                   </div>
                   <span className="text-sm text-sakura-deep font-light tracking-wider">{c.spec}</span>
@@ -398,7 +390,7 @@ export default function Index() {
         <div className="relative max-w-3xl mx-auto text-center px-8">
           <p className="text-xs tracking-[0.4em] uppercase text-sakura-deep mb-4">Limited Allocation</p>
           <h2 className="font-display text-5xl md:text-7xl font-light text-foreground leading-tight mb-6">
-            Begin Your<br />
+            Experience the beauty of<br />
             <em className="text-sakura-deep">Sakura Dance 2</em>
           </h2>
           <p className="text-foreground/60 leading-relaxed mb-10 font-light max-w-lg mx-auto">

@@ -9,7 +9,7 @@
 @layer base {
   :root {
     /* Sakura palette — softened, white-forward */
-    --sakura-petal:       340 55% 88%;      /* was 82% — lighter, more blush */
+    --sakura-petal:       340 55% 82%;      /* was 82% — lighter, more blush */
     --sakura-deep:        340 45% 52%;      /* was 48% — slightly muted mauve-pink */
     --sakura-blush:       340 60% 97%;      /* was 95% — nearly white */
     --sakura-rose:        340 50% 78%;      /* was 68% — softer rose */
@@ -19,7 +19,7 @@
 
     /* Core tokens — white base instead of pink-tinted */
     --background:         0 0% 100%;        /* pure white — was pink-tinted */
-    --foreground:         340 25% 20%;
+    --foreground:         340 30% 12%;
 
     --card:               0 0% 100%;
     --card-foreground:    340 25% 20%;
@@ -34,7 +34,7 @@
     --secondary-foreground: 340 25% 20%;
 
     --muted:              340 30% 96%;      /* very light */
-    --muted-foreground:   340 15% 50%;
+    --muted-foreground:   340 20% 35%;
 
     --accent:             340 55% 88%;
     --accent-foreground:  340 25% 20%;
