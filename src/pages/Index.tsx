@@ -91,7 +91,7 @@ export default function Index() {
         <div className="hidden md:flex items-center gap-8 text-xs tracking-[0.2em] text-sakura-deep/60 font-normal uppercase">
           <a href="#story"       className="hover:text-sakura-deep transition-colors">Story</a>
           <a href="#performance" className="hover:text-sakura-deep transition-colors">Performance</a>
-          <a href="#included"    className="hover:text-sakura-deep transition-colors">Included</a>
+          <a href="#included"    className="hover:text-sakura-deep transition-colors">What's Included</a>
           <a href="#colors"      className="hover:text-sakura-deep transition-colors">Colors</a>
         </div>
         <a
@@ -135,7 +135,7 @@ export default function Index() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-8 items-center w-full py-12">
           {/* Left — text */}
-          <div className="w-[70%]">
+          <div className="w-full">
             <p className="animate-fade-up delay-100 text-xs tracking-[0.4em] uppercase text-sakura-deep/60 mb-6 font-light">
               Honma Golf · Limited Edition
             </p>
@@ -145,7 +145,7 @@ export default function Index() {
             </h1>
             <p className="animate-fade-up delay-300 text-foreground text-base md:text-lg leading-relaxed mb-8 max-w-md font-light"
 >
-              Inspired by the grace of cherry blossoms in motion, Sakura Dance 2 is a premium ladies' golf set designed to elevate your game with beauty, forgiveness, and effortless swingability.
+              Lighter. Faster. More forgiving. Sakura Dance 2 is Honma's latest expression of stunning performance — where five decades of Japanese artistry meets effortless power on every shot.
             </p>
             <div className="animate-fade-up delay-400 flex flex-col sm:flex-row gap-4 items-start mb-8">
               <a
@@ -183,7 +183,7 @@ export default function Index() {
 
       {/* ── TAGLINE BAND ── */}
       <div className="bg-sakura-petal/40 py-4 overflow-hidden border-y border-sakura-rose/20">
-        <div className="flex animate-[shimmer_12s_linear_infinite] whitespace-nowrap">
+        <div className="flex animate-[marquee_20s_linear_infinite] whitespace-nowrap">
           {Array.from({ length: 6 }).map((_, i) => (
             <span key={i} className="text-sakura-deep/60 text-xs tracking-[0.4em] uppercase font-light mx-12">
               Elegance Meets Performance ✦ Japanese Craftsmanship ✦ Limited Allocation ✦
@@ -214,10 +214,10 @@ export default function Index() {
             on a Spring Breeze
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-5 font-light">
-            Sakura Dance 2 is a celebration of the harmony between nature and precision. Every detail — from the delicate sakura engravings to the soft blush finish — is a tribute to the ephemeral beauty of cherry blossoms.
+            Like cherry blossoms dancing on a spring breeze, your shots will rise high — beautifully painting the fairway. Sakura Dance 2 achieves significant weight reduction throughout the set, delivering faster swing speeds, improved ball speed, and +1.4 yards of carry distance over the original.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-8 font-light">
-            Born from decades of Japanese golf-making excellence in Sakata, this super-premium ladies' set is crafted for those who believe the game should be as beautiful as it is rewarding.
+            Born from decades of Japanese golf-making excellence in Sakata, Sakura Dance 2 is crafted for those who believe the game should be as beautiful as it is rewarding.
           </p>
           <div className="w-12 h-0.5 bg-sakura-deep rounded-full" />
         </div>
@@ -254,7 +254,7 @@ export default function Index() {
                 The Sakura Dance 2<br />Signature Iron
               </h3>
               <p className="text-primary-foreground/70 leading-relaxed mb-6 font-light">
-                Each iron face bears a hand-etched cherry blossom motif — a mark of Honma's dedication to artistry. The low CG placement and expanded face deliver towering, forgiving ball flight.
+                An expanded sweet spot paired with low center of gravity positioning forgives mis-hits and delivers easy, high trajectory on every shot. The high MOI putter with CNC-milled face and mid-size grip provides exceptional consistency and confidence on every green.
               </p>
               <ul className="space-y-2">
                 {["#6 through #11 Irons", "Sand Wedge (SW)", "Graphite Shaft — Ladies Flex", "Cherry Blossom Engraving"].map((item) => (
@@ -287,7 +287,7 @@ export default function Index() {
 
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-sakura-deep mb-6">Clubs in the Set</p>
+            <p className="text-xs tracking-[0.3em] uppercase text-sakura-deep mb-6">Complete Set Includes</p>
             <div className="space-y-1">
               {clubs.map((c, i) => (
                 <div
@@ -305,7 +305,7 @@ export default function Index() {
           </div>
 
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-sakura-deep mb-6">Accessory Pack</p>
+            <p className="text-xs tracking-[0.3em] uppercase text-sakura-deep mb-6">Accessories Included</p>
             <img
               src={sakuraAccessories}
               alt="Sakura Dance 2 Accessories"
@@ -329,7 +329,7 @@ export default function Index() {
           <div className="text-center mb-14">
             <p className="text-xs tracking-[0.4em] uppercase text-sakura-deep/60 mb-3">Choose Your Expression</p>
             <h2 className="font-display text-5xl md:text-6xl font-light text-foreground">
-              Two Signature Finishes,<br />One Spirit
+              Two Signature Finishes,<br />One Standard of Excellence
             </h2>
           </div>
 
@@ -389,11 +389,12 @@ export default function Index() {
         <div className="relative max-w-3xl mx-auto text-center px-8">
           <p className="text-xs tracking-[0.4em] uppercase text-sakura-deep mb-4">Limited Allocation</p>
           <h2 className="font-display text-5xl md:text-7xl font-light text-foreground leading-tight mb-6">
-            Experience the beauty of<br />
+            Experience the Beauty of<br />
             <em className="text-sakura-deep">Sakura Dance 2</em>
           </h2>
           <p className="text-foreground/60 leading-relaxed mb-10 font-light max-w-lg mx-auto">
-            Custom built in Sakata, Japan. Allow 4–6 weeks for crafting and delivery. Available in Sakura Pink and Pure White — while allocations last.
+            Custom built in Sakata, Japan. Designed for golfers who refuse to compromise — stunning Japanese artistry paired with lighter, faster, more forgiving performance. Available in Sakura Pink and limited Pure White while allocations last.
+
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -421,10 +422,10 @@ export default function Index() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <img src={honmaLogo} alt="Honma Golf" className="h-6 w-auto opacity-80 mb-1" />
-            <p className="text-xs text-sakura-deep/40 tracking-widest">Sakura Dance 2 · 2025</p>
+            <p className="text-xs text-sakura-deep/40 tracking-widest">Sakura Dance 2 · 2026</p>
           </div>
           <p className="text-xs text-foreground/30 font-light tracking-wide text-center">
-            © 2025 Honma Golf. All rights reserved. All clubs are custom built in Sakata, Japan.
+            © 2026 Honma Golf. All rights reserved. Experience Stunning Performance.
           </p>
           <a
             href="https://us.honmagolf.com/collections/sakura-dance-2-package-sets"
