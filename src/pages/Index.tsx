@@ -12,7 +12,7 @@ const Petal = ({ style }: { style: React.CSSProperties }) => (
     <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
       <path
         d="M9 0C9 0 16 6 16 11.5C16 15.5 12.5 19 9 20C5.5 19 2 15.5 2 11.5C2 6 9 0 9 0Z"
-        fill="hsl(340 65% 70% / 0.55)"
+        fill="hsl(340 55% 55% / 0.45)"
       />
     </svg>
   </div>
@@ -21,7 +21,7 @@ const Petal = ({ style }: { style: React.CSSProperties }) => (
 const petals = Array.from({ length: 22 }, (_, i) => ({
   left: `${(i / 22) * 100 + (Math.random() * 6 - 3)}%`,
   top: `-${Math.random() * 8 + 2}%`,
-  animationDuration: `${7 + Math.random() * 8}s`,
+  animationDuration: `${14 + Math.random() * 10}s`,
   animationDelay: `${Math.random() * 7}s`,
   opacity: 0.5 + Math.random() * 0.5,
   transform: `scale(${0.5 + Math.random() * 1})`,
@@ -135,8 +135,8 @@ export default function Index() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-8 items-center w-full py-12">
           {/* Left — text */}
-          <div>
-            <p className="animate-fade-up delay-100 text-xs tracking-[0.4em] uppercase text-sakura-deep/60 mb-6 font-normal">
+          <div className="w-[70%]">
+            <p className="animate-fade-up delay-100 text-xs tracking-[0.4em] uppercase text-sakura-deep/60 mb-6 font-light">
               Honma Golf · Limited Edition
             </p>
             <h1 className="animate-fade-up delay-200 font-display leading-none text-foreground mb-6">
@@ -163,12 +163,10 @@ export default function Index() {
                 Discover More
               </a>
             </div>
-            <p className="animate-fade-up delay-500 text-xs tracking-widest text-sakura-deep/40 uppercase">
+            <p className="animate-fade-up delay-500 text-xs tracking-widest text-sakura-deep/70 uppercase">
               Small-batch Offering · Limited Availability
             </p>
-            <p className="text-xs tracking-widest text-sakura-deep/30 uppercase mt-1">
-              Custom built in Sakata, Japan
-            </p>
+        
           </div>
 
           
