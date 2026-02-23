@@ -145,7 +145,7 @@ export default function Index() {
             </h1>
             <p className="animate-fade-up delay-300 text-foreground text-base md:text-lg leading-relaxed mb-8 max-w-md font-light"
 >
-              Lighter. Faster. More forgiving. Sakura Dance 2 is Honma's latest expression of stunning performance — where five decades of Japanese artistry meets effortless power on every shot.
+              A complete 12-piece ladies' set designed for elegance, confidence, and effortless swings — crafted with over five decades of Honma artistry in Sakata, Japan, and built to elevate every round you play.
             </p>
             <div className="animate-fade-up delay-400 flex flex-col sm:flex-row gap-4 items-start mb-8">
               <a
