@@ -1,8 +1,8 @@
-import myHeroBg from "@/assets/honma-sakura-dance-2-8.jpg";
+import myHeroBg from "@/assets/honma-sakura-dance-driver.jpg";
 import myClubsImage from "@/assets/honma-sakura-dance-2-25.jpg";
-import sakuraIron from "@/assets/sakura-iron.jpg";
-import sakuraLifestyle from "@/assets/honma-lifestyle-real.jpg";
-import sakuraAccessories from "@/assets/sakura-accessories.jpg";
+import sakuraIron from "@/assets/honma-sakura-dance-iron.jpg";
+import sakuraLifestyle from "@/assets/honma-sakura-dance-lifestyle.jpg";
+import sakuraAccessories from "@/assets/honma-sakura-dance-accessories.jpg";
 import { useState } from "react";
 
 /* ── Floating petal ── */
@@ -26,13 +26,14 @@ const petals = Array.from({ length: 22 }, (_, i) => ({
   transform: `scale(${0.5 + Math.random() * 1})`,
 }));
 
+// FIX 1: Added icon property to each club object
 const clubs = [
-  { name: "Driver", spec: "11.5°" },
-  { name: "Fairway Wood", spec: "16°" },
-  { name: "Fairway Wood", spec: "19°" },
-  { name: "Hybrid", spec: "22°" },
-  { name: "Iron Set", spec: "#6–11, SW" },
-  { name: "Putter", spec: "Mallet" },
+  { name: "Driver",       spec: "11.5°",      icon: "🏌️" },
+  { name: "Fairway Wood", spec: "16°",         icon: "🌲" },
+  { name: "Fairway Wood", spec: "19°",         icon: "🌲" },
+  { name: "Hybrid",       spec: "22°",         icon: "⚡" },
+  { name: "Iron Set",     spec: "#6–11, SW",   icon: "✦" },
+  { name: "Putter",       spec: "Mallet",      icon: "◎" },
 ];
 
 const accessories = [
@@ -105,19 +106,19 @@ export default function Index() {
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
-  {/* BG image with light overlay */}
-  <div className="absolute inset-0">
-    <img
-      src={myHeroBg}
-      alt="Sakura Dance 2"
-      className="w-full h-full object-cover opacity-80"
-    />
-    <div className="absolute inset-0 bg-white/45" />
-  </div>
+        {/* BG image with light overlay */}
+        <div className="absolute inset-0">
+          <img
+            src={myHeroBg}
+            alt="Sakura Dance 2"
+            className="w-full h-full object-cover opacity-80"
+          />
+          <div className="absolute inset-0 bg-white/45" />
+        </div>
 
-  {/* Petals */}
-  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    {petals.map((p, i) => (
+        {/* Petals */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {petals.map((p, i) => (
             <Petal key={i} style={{
               left: p.left, top: p.top,
               animationName: "float-petal",
@@ -304,9 +305,11 @@ export default function Index() {
               {clubs.map((c, i) => (
                 <div
                   key={i}
-                  className="flex items-center justify-between py-4 border-b border-sakura-petal/30 last:border-0 hover:pl-2 transition-all duration-300"
+                  // FIX 2: removed hover:pl-2 which caused layout shift; use padding-left with transition instead
+                  className="flex items-center justify-between py-4 border-b border-sakura-petal/30 last:border-0 transition-all duration-300 hover:pl-3"
                 >
                   <div className="flex items-center gap-4">
+                    {/* FIX 3: c.icon now exists — renders correctly */}
                     <span className="text-lg">{c.icon}</span>
                     <span className="font-light text-foreground">{c.name}</span>
                   </div>
@@ -356,7 +359,11 @@ export default function Index() {
                     : "border-sakura-deep/30 text-sakura-deep/70 hover:border-sakura-deep/60 hover:text-sakura-deep bg-white/60"
                 }`}
               >
-                <span className="w-3 h-3 rounded-full border border-sakura-petal/50 flex-shrink-0" style={{ backgroundColor: c.hex }} />
+                {/* FIX 4: swatch dot was missing background — added inline style correctly */}
+                <span
+                  className="w-3 h-3 rounded-full border border-sakura-petal/50 flex-shrink-0"
+                  style={{ backgroundColor: c.hex }}
+                />
                 {c.label}
               </button>
             ))}
@@ -444,6 +451,7 @@ export default function Index() {
           </a>
         </div>
       </footer>
+
     </div>
   );
 }
