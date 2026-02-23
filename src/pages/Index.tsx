@@ -254,7 +254,7 @@ export default function Index() {
                 The Sakura Dance 2<br />Signature Iron
               </h3>
               <p className="text-primary-foreground/70 leading-relaxed mb-6 font-light">
-                An expanded sweet spot paired with low center of gravity positioning forgives mis-hits and delivers easy, high trajectory on every shot. The high MOI putter with CNC-milled face and mid-size grip provides exceptional consistency and confidence on every green.
+                An expanded sweet spot paired with low center of gravity positioning forgives mis-hits and delivers easy, high trajectory on every shot. The wide sole and high MOI design give you the confidence to attack every approach — from the fairway or out of the rough.
               </p>
               <ul className="space-y-2">
                 {["#6 through #11 Irons", "Sand Wedge (SW)", "Graphite Shaft — Ladies Flex", "Cherry Blossom Engraving"].map((item) => (
