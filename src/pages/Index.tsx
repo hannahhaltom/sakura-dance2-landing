@@ -9,20 +9,16 @@ import { useState } from "react";
 /* ── Floating petal ── */
 const Petal = ({ style }: { style: React.CSSProperties }) => (
   <div className="pointer-events-none absolute" style={style}>
-    <svg width={24 + Math.random() * 28} height={24 + Math.random() * 28} viewBox="-15 -15 30 30" fill="none">
-  <g fill="hsl(340 55% 65% / 0.40)">
-    <ellipse cx="0" cy="-7" rx="3.5" ry="6.5" />
-    <ellipse cx="0" cy="-7" rx="3.5" ry="6.5" transform="rotate(72)" />
-    <ellipse cx="0" cy="-7" rx="3.5" ry="6.5" transform="rotate(144)" />
-    <ellipse cx="0" cy="-7" rx="3.5" ry="6.5" transform="rotate(216)" />
-    <ellipse cx="0" cy="-7" rx="3.5" ry="6.5" transform="rotate(288)" />
-    <circle cx="0" cy="0" r="2" fill="white" opacity="0.5" />
-  </g>
-    </svg>
+    <svg width={32 + Math.random() * 24} height={40 + Math.random() * 20} viewBox="0 0 18 24" fill="none">
+  <path
+    d="M9 0C9 0 17 7 17 13.5C17 18 13.5 22.5 9 24C4.5 22.5 1 18 1 13.5C1 7 9 0 9 0Z"
+    fill="hsl(340 50% 70% / 0.35)"
+  />
+</svg>
   </div>
 );
 
-const petals = Array.from({ length: 22 }, (_, i) => ({
+const petals = Array.from({ length: 16 }, (_, i) => ({
   left: `${(i / 22) * 100 + (Math.random() * 6 - 3)}%`,
   top: `-${Math.random() * 8 + 2}%`,
   animationDuration: `${14 + Math.random() * 10}s`,
