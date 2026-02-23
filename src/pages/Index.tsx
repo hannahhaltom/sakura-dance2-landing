@@ -9,11 +9,15 @@ import { useState } from "react";
 /* ── Floating petal ── */
 const Petal = ({ style }: { style: React.CSSProperties }) => (
   <div className="pointer-events-none absolute" style={style}>
-    <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
-      <path
-        d="M9 0C9 0 16 6 16 11.5C16 15.5 12.5 19 9 20C5.5 19 2 15.5 2 11.5C2 6 9 0 9 0Z"
-        fill="hsl(340 55% 55% / 0.45)"
-      />
+    <svg width={24 + Math.random() * 28} height={24 + Math.random() * 28} viewBox="-15 -15 30 30" fill="none">
+  <g fill="hsl(340 55% 65% / 0.40)">
+    <ellipse cx="0" cy="-7" rx="3.5" ry="6.5" />
+    <ellipse cx="0" cy="-7" rx="3.5" ry="6.5" transform="rotate(72)" />
+    <ellipse cx="0" cy="-7" rx="3.5" ry="6.5" transform="rotate(144)" />
+    <ellipse cx="0" cy="-7" rx="3.5" ry="6.5" transform="rotate(216)" />
+    <ellipse cx="0" cy="-7" rx="3.5" ry="6.5" transform="rotate(288)" />
+    <circle cx="0" cy="0" r="2" fill="white" opacity="0.5" />
+  </g>
     </svg>
   </div>
 );
@@ -45,22 +49,22 @@ const features = [
   {
     title: "Weight Reduction",
     desc: "Further reduced weight enables faster swing speeds and effortless, flowing motion.",
-    icon: "✦",
+
   },
   {
     title: "Expanded Sweet Spot",
     desc: "Low CG design with a wider sweet zone forgives mishits and builds confidence.",
-    icon: "◉",
+  
   },
   {
     title: "Japanese Craftsmanship",
     desc: "Custom built at Honma's legendary Sakata factory — the pinnacle of golf artistry.",
-    icon: "❋",
+    
   },
   {
     title: "Graphite Shaft",
     desc: "Specially designed graphite shaft tuned for ladies' swing dynamics and power.",
-    icon: "⬡",
+    
   },
 ];
 
@@ -154,7 +158,7 @@ export default function Index() {
                 rel="noopener noreferrer"
                 className="inline-block px-10 py-3.5 rounded-full gradient-cta text-primary-foreground text-xs tracking-[0.25em] uppercase font-medium hover:opacity-90 transition-opacity shadow-hero"
               >
-                Order Now — $8,000
+                Order Now
               </a>
               <a
                 href="#story"
@@ -237,7 +241,7 @@ export default function Index() {
                 key={i}
                 className="bg-card border border-sakura-petal/30 p-8 rounded-2xl hover:border-sakura-deep/40 hover:shadow-soft transition-all duration-300 group"
               >
-                <span className="text-2xl text-sakura-deep mb-5 block">{f.icon}</span>
+                <span className="text-2xl text-sakura-deep mb-5 block"></span>
                 <h3 className="font-display text-xl font-light text-foreground mb-3 group-hover:text-sakura-deep transition-colors">
                   {f.title}
                 </h3>
